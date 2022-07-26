@@ -6,16 +6,13 @@ function AddMeetups() {
     const history = useHistory();
 
     function AddMeetupsHandler(meetupData) {
-        fetch(
-            'https://worldwide-meetups-default-rtdb.europe-west1.firebasedatabase.app/meetups.json',
-            {
-                method: 'POST',
-                body: JSON.stringify(meetupData),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            }
-        ).then(() => {
+        fetch('https://worldwidemeetups-default-rtdb.europe-west1.firebasedatabase.app/meetups.json', {
+            method: 'POST',
+            body: JSON.stringify(meetupData),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(() => {
             history.replace('/');
         });
     }
